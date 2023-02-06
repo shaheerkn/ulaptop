@@ -35,7 +35,8 @@
         "template--17855136563517__071309db-e37c-4793-9262-3db7ca1b620f-16754467025e87c795-2"
       ],
       "settings": {
-        "image_overlay_opacity": 0,
+        "image": "shopify:\/\/shop_images\/preparing-for-travel.jpg",
+        "image_overlay_opacity": 60,
         "image_height": "medium",
         "adapt_height_first_image": false,
         "desktop_content_position": "middle-center",
