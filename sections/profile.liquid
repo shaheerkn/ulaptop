@@ -1,0 +1,64 @@
+<div class="profile">
+  <div class="profile__img"><img
+      src={{ section.settings.user_image | img_url: 'medium' }}
+      alt=""
+      srcset=""></div>
+  <h3 class="profile__name">
+    {{ section.settings.username }}
+  </h3>
+</div>
+
+<style>
+  .profile {
+    max-width: 500px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .profile__img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid{{ section.settings.border_color }};
+  }
+
+  .profile__img img {
+    width: 100%;
+  }
+
+  .profile__name {
+    text-transform: uppercase;
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "profile",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "user_image",
+        "label": "Please Select"
+      }, {
+        "type": "text",
+        "id": "username",
+        "label": "username"
+      }, {
+        "type": "color",
+        "id": "border_color",
+        "label": "border_color"
+      }
+    ],
+    "presets": [
+      {
+        "category": "profile",
+        "name": "profile"
+      }
+    ]
+  }
+{% endschema %}

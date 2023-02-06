@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "f6029dc3-0e5f-4205-9142-51ec00c4d43c": {
+      "type": "about-us",
+      "settings": {
+        "main_heading": "Who are we?"
+      }
+    }
+  },
+  "order": [
+    "f6029dc3-0e5f-4205-9142-51ec00c4d43c"
+  ]
+}

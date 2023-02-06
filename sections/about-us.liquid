@@ -1,0 +1,101 @@
+{% assign alignment = section.settings.heading_alignment %}
+
+<div class="container">
+  <h2 class="{% if alignment == "left" %}text-left{% elsif alignment == "right" %}text-right{% else %}text-center{% endif %}">{{ section.settings.main_heading | upcase }}</h2>
+  <p>
+    {{ section.settings.paragraph }}
+  </p>
+</div>
+
+<style>
+  .main-page-title {
+    display: none;
+  }
+
+  .container {
+    max-width: 1060px;
+    padding-inline: 30px;
+    margin-inline: auto;
+    text-align: center;
+    margin-top: {{- section.settings.margin_top -}}
+    px;
+    margin-bottom: {{- section.settings.margin_bottom -}}
+    px;
+  }
+
+  .text-left {
+    text-align: left;
+  }
+  .text-right {
+    text-align: right;
+  }
+  .text-center {
+    text-align: center;
+  }
+</style>
+
+
+{% schema %}
+  {
+    "name": "About",
+    "settings": [
+      {
+        "type": "text",
+        "id": "main_heading",
+        "label": "Enter the heading",
+        "placeholder": "Enter the heading"
+      },
+      {
+        "type": "text",
+        "id": "paragraph",
+        "label": "Enter the paragraph",
+        "placeholder": "Enter the paragraph"
+      },
+      {
+        "type": "radio",
+        "label": "Heading Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "left"
+          }, {
+            "value": "center",
+            "label": "center"
+          }, {
+            "value": "right",
+            "label": "right"
+          }
+        ],
+        "id": "heading_alignment",
+        "info": "Heading Alignment"
+      },
+      {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Margin Top",
+        "min": 0,
+        "max": 100,
+        "default": 11,
+        "step": 1,
+        "unit": "px",
+        "info": "Enter Margin Top"
+      }, {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "min": 0,
+        "max": 100,
+        "default": 11,
+        "step": 1,
+        "unit": "px",
+        "info": "Enter Margin bottom"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About us",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}
